@@ -1,0 +1,7 @@
+body{
+  background-color: rgba(217,237,247,1);
+}
+
+.login {
+  margin-top: calc(50vh - 200px);
+}
