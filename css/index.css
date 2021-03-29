@@ -1,0 +1,35 @@
+#logout {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  transition: .2s;
+}
+
+#logout:hover {
+  color: rgba(255, 255, 255, 0.753);
+}
+
+#menu .nav-link {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+#menu .nav-link.active {
+  padding-left: calc(1rem - 8px);
+  border-left: 8px solid blue;
+  background-color: rgba(43, 43, 195, 0.11);
+}
+
+#menu .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.068);
+}
+
+#menu i {
+  font-size: 25px;
+  padding: 8px;
+}
+
+.window {
+  height: calc(100vh - 56px);
+}
