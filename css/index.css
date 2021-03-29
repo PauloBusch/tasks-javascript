@@ -33,3 +33,18 @@
 .window {
   height: calc(100vh - 56px);
 }
+
+#pages {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+
+#pages li {
+  display: none;
+}
+
+#pages li.active {
+  display: block;
+}
