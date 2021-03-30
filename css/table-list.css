@@ -38,20 +38,25 @@ table thead th {
   background-color: #9595952e;
 }
 
+table thead th.header-key {
+  width: 50px;
+}
+
 table thead th.header-actions {
-  width: 100px;
+  width: 115px;
 }
 
 table tbody .list-action-remove,
 table tbody .list-action-edit {
-  padding: 5px;
-  font-size: 25px;
+  padding: 0 10px;
+  font-size: 20px;
   cursor: pointer;  
+  transition: .2s;
 }
 
 table tbody .list-action-remove:hover,
 table tbody .list-action-edit:hover {
-  opacity: .8;
+  opacity: .6;
 }
 
 table tbody .list-action-remove {
