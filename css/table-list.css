@@ -1,0 +1,63 @@
+
+
+.loading-message,
+.list-state-not-found {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.list-state-loading .loading-message {
+  display: block;
+}
+
+.list-state-loading table,
+.list-state-loading .not-found-message {
+  display: none;
+}
+
+.list-state-loaded table {
+  display: inline-table;
+}
+
+.list-state-loaded .loading-message,
+.list-state-loaded .not-found-message {
+  display: none;
+}
+
+.list-state-not-found .not-found-message {
+  display: block;
+}
+
+.list-state-not-found .loading-message,
+.list-state-not-found table {
+  display: none;
+}
+
+table thead th {
+  background-color: #9595952e;
+}
+
+table thead th.header-actions {
+  width: 100px;
+}
+
+table tbody .list-action-remove,
+table tbody .list-action-edit {
+  padding: 5px;
+  font-size: 25px;
+  cursor: pointer;  
+}
+
+table tbody .list-action-remove:hover,
+table tbody .list-action-edit:hover {
+  opacity: .8;
+}
+
+table tbody .list-action-remove {
+  color: red;
+}
+
+table tbody .list-action-edit {
+  color: rgb(80, 80, 80);
+}

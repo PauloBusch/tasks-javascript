@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tasks</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css/table-list.css"/>
   <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
@@ -63,6 +64,20 @@
             </li>
             <li id="types">
               <h2 class="border-bottom pb-3">Tipos</h2>
+              <div class="type-list-container list-loading">
+                <div class="loading-message">Carregando...</div>
+                <div class="not-found-message">Nenhum registro encontrado</div>
+                <table id="type-list" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nome</th>
+                      <th scope="col" class="header-actions">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
             </li>
             <li id="tasks">
               <h2 class="border-bottom pb-3">Tarefas</h2>
@@ -81,5 +96,8 @@
   <script src="js/pages/auth.js"></script>
   <script src="js/pages/header.js"></script>
   <script src="js/pages/sidenav.js"></script>
+  <script src="js/plugins/list-status.js"></script>
+  <script src="js/plugins/table-list.js"></script>
+  <script src="js/pages/type-list.js"></script>
 </body>
 </html>
