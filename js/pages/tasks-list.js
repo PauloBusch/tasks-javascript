@@ -28,10 +28,10 @@ function fillTableTask(data) {
 
   const tableBody = document.querySelector('#task-list tbody');
   tableBody.innerHTML = '';
-  for (const row of data.rows)
+  for (const row of data.rows) 
     tableBody.innerHTML += fillRowTask(row);
 
-  tableEventsTask();
+  tableEventsTask(data.rows);
   setStateList('task-list-container', LIST_LOADED);
 }
 
@@ -57,30 +57,37 @@ function fillActionsTask(row) {
   `;
 }
 
-function tableEventsTask() {
-  const rows = document.querySelectorAll('.task-list-container tbody tr');
-  for (const row of rows)
-    tableEventsTaskFromId(row.getAttribute('data-id'));
+function tableEventsTask(rows) {
+  for (const rowData of rows)
+    tableEventsTaskFromData(rowData);
 }
 
-function tableEventsTaskFromId(id) {
-  const getId = event => event.currentTarget.getAttribute('data-id');
+function tableEventsTaskFromData(data) {
+  const id = data.id;
   const actionRemove = document.querySelector(`.task-list-container tr[data-id="${id}"] .list-action-remove`);
   const actionFinish = document.querySelector(`.task-list-container tr[data-id="${id}"] .list-action-finish`);
   const actionRestore = document.querySelector(`.task-list-container tr[data-id="${id}"] .list-action-restore`);
   const actionEdit = document.querySelector(`.task-list-container tr[data-id="${id}"] .list-action-edit`);
-  actionRemove.addEventListener('click', event => confirmRemove(getId(event)));
-  actionEdit.addEventListener('click', event => editTaskForm(getId(event)));
-  if (actionFinish) actionFinish.addEventListener('click', event => finishTask(getId(event)));
-  if (actionRestore) actionRestore.addEventListener('click', event => restoreTask(getId(event)));
+  actionRemove.addEventListener('click', event => confirmRemoveTask(id));
+  actionEdit.addEventListener('click', event => editTaskForm(id));
+  if (actionFinish) actionFinish.addEventListener('click', event => finishTask(data));
+  if (actionRestore) actionRestore.addEventListener('click', event => restoreTask(data));
 }
 
-function finishTask(id) {
-
+function finishTask(data) {
+  data.done = true;
+  const id = data.id;
+  const row = document.querySelector(`.task-list-container tr[data-id="${id}"]`);
+  row.innerHTML = fillRowTask(data);
+  tableEventsTaskFromData(data);
 }
 
-function restoreTask(id) {
-
+function restoreTask(data) {
+  data.done = false;
+  const id = data.id;
+  const row = document.querySelector(`.task-list-container tr[data-id="${id}"]`);
+  row.innerHTML = fillRowTask(data);
+  tableEventsTaskFromData(data);
 }
 
 function confirmRemoveTask(id) {
