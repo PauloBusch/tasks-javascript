@@ -53,13 +53,17 @@ function fillActions(row) {
 }
 
 function tableEvents() {
-  const actionsRemove = document.querySelectorAll('.type-list-container .list-action-remove');
-  const actionsEdit = document.querySelectorAll('.type-list-container .list-action-edit');
+  const rows = document.querySelectorAll('.type-list-container tbody tr');
+  for (const row of rows)
+    tableEventsFromId(row.getAttribute('data-id'));
+}
+
+function tableEventsFromId(id) {
   const getId = event => event.currentTarget.getAttribute('data-id');
-  for (const action of actionsRemove)
-    action.addEventListener('click', event => confirmRemove(getId(event)));
-  for (const action of actionsEdit)
-    action.addEventListener('click', event => editType(getId(event)));
+  const actionRemove = document.querySelector(`.type-list-container tr[data-id="${id}"] .list-action-remove`);
+  const actionEdit = document.querySelector(`.type-list-container tr[data-id="${id}"] .list-action-edit`);
+  actionRemove.addEventListener('click', event => confirmRemove(getId(event)));
+  actionEdit.addEventListener('click', event => editTypeForm(getId(event)));
 }
 
 function confirmRemove(id) {
