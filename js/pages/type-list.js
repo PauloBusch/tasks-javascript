@@ -9,7 +9,7 @@ function loadTypes() {
   request.onload = function(result) {
     const response = JSON.parse(result.currentTarget.response);
     if (result.currentTarget.status === 200) {
-      fillTable(response.data);
+      fillTableTypes(response.data);
       return;
     }
 
@@ -20,7 +20,7 @@ function loadTypes() {
   request.send();
 }
 
-function fillTable(data) {
+function fillTableTypes(data) {
   if (data.count === 0) {
     setStateList('type-list-container', LIST_NOT_FOUND);
     return;
@@ -29,44 +29,44 @@ function fillTable(data) {
   const tableBody = document.querySelector('#type-list tbody');
   tableBody.innerHTML = '';
   for (const row of data.rows)
-    tableBody.innerHTML += fillRow(row);
+    tableBody.innerHTML += fillRowType(row);
 
-  tableEvents();
+    tableEventsType();
   setStateList('type-list-container', LIST_LOADED);
 }
 
-function fillRow(row) {
+function fillRowType(row) {
   return `
     <tr data-id=${row.id}>
       <th scope="row">${row.id}</th>
       <td>${row.name}</td>
-      <td>${fillActions(row)}</td>
+      <td>${fillActionsType(row)}</td>
     </tr>
   `;
 }
 
-function fillActions(row) {
+function fillActionsType(row) {
   return `
     <i data-id=${row.id} title="Remover" class="list-action-remove far fa-trash-alt"></i>
     <i data-id=${row.id} title="Editar" class="list-action-edit fas fa-edit"></i>
   `;
 }
 
-function tableEvents() {
+function tableEventsType() {
   const rows = document.querySelectorAll('.type-list-container tbody tr');
   for (const row of rows)
-    tableEventsFromId(row.getAttribute('data-id'));
+  tableEventsTypeFromId(row.getAttribute('data-id'));
 }
 
-function tableEventsFromId(id) {
+function tableEventsTypeFromId(id) {
   const getId = event => event.currentTarget.getAttribute('data-id');
   const actionRemove = document.querySelector(`.type-list-container tr[data-id="${id}"] .list-action-remove`);
   const actionEdit = document.querySelector(`.type-list-container tr[data-id="${id}"] .list-action-edit`);
-  actionRemove.addEventListener('click', event => confirmRemove(getId(event)));
+  actionRemove.addEventListener('click', event => confirmRemoveType(getId(event)));
   actionEdit.addEventListener('click', event => editTypeForm(getId(event)));
 }
 
-function confirmRemove(id) {
+function confirmRemoveType(id) {
   const modal = $('#confirm-remove');
   const submitButton = document.getElementById('submit-remove');
   modal.on('hidden.bs.modal', function (e) {

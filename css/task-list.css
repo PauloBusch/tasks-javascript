@@ -1,0 +1,24 @@
+table tbody .list-action-restore,
+table tbody .list-action-finish {
+  padding: 0 10px;
+  font-size: 20px;
+  cursor: pointer;  
+  transition: .2s;
+}
+
+table tbody .list-action-restore:hover,
+table tbody .list-action-finish:hover {
+  opacity: .6;
+}
+
+table tbody .list-action-finish {
+  color: green;
+}
+
+table tbody .list-action-restore {
+  color: orange;
+}
+
+.task-list-container table thead th.header-actions {
+  width: 160px;
+}

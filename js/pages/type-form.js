@@ -26,10 +26,10 @@ function newTypeForm() {
 
     modal.modal('hide');
 
-    const rowHTML = fillRow(data);
+    const rowHTML = fillRowType(data);
     const tableBody = document.querySelector('#type-list tbody');
     tableBody.innerHTML = rowHTML + tableBody.innerHTML;
-    tableEventsFromId(data.id);
+    tableEventsTypeFromId(data.id);
 
     const count = document.querySelectorAll(`.type-list-container tbody tr`).length;
     if (count > 0) setStateList('type-list-container', LIST_LOADED);
@@ -61,8 +61,8 @@ async function editTypeForm(id) {
 
     modal.modal('hide');
     const row = document.querySelector(`.type-list-container tr[data-id="${id}"]`);
-    row.innerHTML = fillRow(data);
-    tableEventsFromId(data.id);
+    row.innerHTML = fillRowType(data);
+    tableEventsTypeFromId(data.id);
   });
 }
 

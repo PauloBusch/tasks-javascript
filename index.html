@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/table-list.css"/>
   <link rel="stylesheet" href="css/form.css"/>
   <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/task-list.css"/>
 </head>
 <body>
   <header>
@@ -65,9 +66,9 @@
             </li>
             <li id="types">
               <h2 class="border-bottom pb-3">Tipos</h2>
-              <div class="type-list-container list-loading">
+              <div class="type-list-container list-state-loading">
                 <div class="loading-message">Carregando...</div>
-                <div class="not-found-message">Nenhum registro encontrado</div>
+                <div class="not-found-message">Nenhum tipo encontrado</div>
                 <table id="type-list" class="table table-bordered table-hover">
                   <thead>
                     <tr>
@@ -114,6 +115,21 @@
             </li>
             <li id="tasks">
               <h2 class="border-bottom pb-3">Tarefas</h2>
+              <div class="task-list-container list-state-loading">
+                <div class="loading-message">Carregando...</div>
+                <div class="not-found-message">Nenhuma tarefa encontrada</div>
+                <table id="task-list" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="header-key">ID</th>
+                      <th scope="col">Tipo</th>
+                      <th scope="col">Tempo</th>
+                      <th scope="col" class="header-actions">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
             </li>
           </ul>
 
@@ -156,5 +172,6 @@
   <script src="js/plugins/random.js"></script>
   <script src="js/pages/type-list.js"></script>
   <script src="js/pages/type-form.js"></script>
+  <script src="js/pages/tasks-list.js"></script>
 </body>
 </html>
