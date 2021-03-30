@@ -3,7 +3,8 @@ window.addEventListener('load', loadTypes, false);
 function loadTypes() {
   const request = new XMLHttpRequest();
   const token = localStorage.getItem('token');
-  toggleLoadingList('type-list-container', LIST_LOADING);
+  if (!token) logout();
+  setStateList('type-list-container', LIST_LOADING);
   request.open('GET', `${API_HOST}/types`, true);
   request.onload = function(result) {
     const response = JSON.parse(result.currentTarget.response);
@@ -21,7 +22,7 @@ function loadTypes() {
 
 function fillTable(data) {
   if (data.count === 0) {
-    toggleLoadingList('type-list-container', LIST_NOT_FOUND);
+    setStateList('type-list-container', LIST_NOT_FOUND);
     return;
   }
 
@@ -31,7 +32,7 @@ function fillTable(data) {
     tableBody.innerHTML += fillRow(row);
 
   tableEvents();
-  toggleLoadingList('type-list-container', LIST_LOADED);
+  setStateList('type-list-container', LIST_LOADED);
 }
 
 function fillRow(row) {
@@ -75,13 +76,14 @@ function confirmRemove(id) {
     const row = document.querySelector(`.type-list-container tr[data-id="${id}"]`);
     row.remove();
     const count = document.querySelectorAll(`.type-list-container tbody tr`).length;
-    if (count === 0) toggleLoadingList('type-list-container', LIST_NOT_FOUND);
+    if (count === 0) setStateList('type-list-container', LIST_NOT_FOUND);
   });
 }
 
 async function removeType(id) {
   const request = new XMLHttpRequest();
   const token = localStorage.getItem('token');
+  if (!token) logout();
   request.open('DELETE', `${API_HOST}/types/${id}`, true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.setRequestHeader('Authorization', `Bearer ${token}`);
@@ -97,8 +99,4 @@ async function removeType(id) {
     };
     request.send();
   });
-}
-
-function editType(id) {
-  
 }

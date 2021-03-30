@@ -1,4 +1,4 @@
-function toggleLoadingList(className, state) {
+function setStateList(className, state) {
   const listContainer = document.querySelector(`.${className}`);
   resetListState(listContainer);
   listContainer.classList.add(state);

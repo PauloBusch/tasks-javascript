@@ -7,6 +7,7 @@
   <title>Tasks</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous"/>
   <link rel="stylesheet" href="css/table-list.css"/>
+  <link rel="stylesheet" href="css/form.css"/>
   <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
@@ -78,7 +79,38 @@
                   <tbody></tbody>
                 </table>
               </div>
+
               <i id="add-type" title="Adicionar Tipo" class="elipse-fixed-button fas fa-plus"></i>
+              <div class="modal fade form-state-loading" id="modal-type" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title loading-message">Carregando...</h5>
+                      <h5 class="modal-title update-message">Edição de Tipo</h5>
+                      <h5 class="modal-title craete-message">Cadastro de Tipo</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="type-form">
+                        <div class="hidden-fields">
+                          <input type="hidden" name="id"/>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label" for="name">Nome:</label>
+                          <input class="form-control" name="name" id="name" placeholder="Nome" type="text" required>
+                          <div class="invalid-feedback">Informe o nome</div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                      <button type="button" class="btn btn-danger" id="submit-save">SALVAR</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li id="tasks">
               <h2 class="border-bottom pb-3">Tarefas</h2>
@@ -118,7 +150,10 @@
   <script src="js/pages/header.js"></script>
   <script src="js/pages/sidenav.js"></script>
   <script src="js/plugins/list-status.js"></script>
+  <script src="js/plugins/form-status.js"></script>
   <script src="js/plugins/table-list.js"></script>
+  <script src="js/plugins/form.js"></script>
   <script src="js/pages/type-list.js"></script>
+  <script src="js/pages/type-form.js"></script>
 </body>
 </html>

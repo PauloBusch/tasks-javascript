@@ -1,0 +1,26 @@
+.form-state-loading .loading-message {
+  display: block;
+}
+
+.form-state-loading .create-message, 
+.form-state-loading .update-message {
+  display: none;
+}
+
+.form-state-create .create-message {
+  display: block;
+}
+
+.form-state-create .loading-message, 
+.form-state-create .update-message {
+  display: none;
+}
+
+.form-state-update .update-message {
+  display: block;
+}
+
+.form-state-create .loading-message, 
+.form-state-create .create-message {
+  display: none;
+}
