@@ -9,3 +9,4 @@ function resetListState(listContainer) {
     if (className.search(/list-state-/) !== -1)
       listContainer.classList.remove(className);
 }
+

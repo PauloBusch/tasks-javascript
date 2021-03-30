@@ -92,7 +92,7 @@ async function removeType(id) {
         return;
       }
   
-      alert('Falha ao remover Tipo!');
+      alert('Falha ao remover registro!');
       reject();
     };
     request.send();
@@ -100,5 +100,5 @@ async function removeType(id) {
 }
 
 function editType(id) {
-
+  
 }
