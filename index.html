@@ -85,9 +85,9 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title loading-message">Carregando...</h5>
-                      <h5 class="modal-title update-message">Edição de Tipo</h5>
-                      <h5 class="modal-title craete-message">Cadastro de Tipo</h5>
+                      <h5 class="modal-title loading-form-message">Carregando...</h5>
+                      <h5 class="modal-title update-form-message">Edição de Tipo</h5>
+                      <h5 class="modal-title create-form-message">Cadastro de Tipo</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -99,14 +99,14 @@
                         </div>
                         <div class="form-group">
                           <label class="control-label" for="name">Nome:</label>
-                          <input class="form-control" name="name" id="name" placeholder="Nome" type="text" required>
+                          <input class="form-control" name="name" id="name" placeholder="Tipo de Tarefa" type="text" required>
                           <div class="invalid-feedback">Informe o nome</div>
                         </div>
                       </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
-                      <button type="button" class="btn btn-danger" id="submit-save">SALVAR</button>
+                      <button type="button" class="btn btn-primary" id="submit-save-type">SALVAR</button>
                     </div>
                   </div>
                 </div>
@@ -153,6 +153,7 @@
   <script src="js/plugins/form-status.js"></script>
   <script src="js/plugins/table-list.js"></script>
   <script src="js/plugins/form.js"></script>
+  <script src="js/plugins/random.js"></script>
   <script src="js/pages/type-list.js"></script>
   <script src="js/pages/type-form.js"></script>
 </body>

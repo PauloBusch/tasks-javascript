@@ -81,9 +81,9 @@ function confirmRemove(id) {
 }
 
 async function removeType(id) {
-  const request = new XMLHttpRequest();
   const token = localStorage.getItem('token');
   if (!token) logout();
+  const request = new XMLHttpRequest();
   request.open('DELETE', `${API_HOST}/types/${id}`, true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.setRequestHeader('Authorization', `Bearer ${token}`);
