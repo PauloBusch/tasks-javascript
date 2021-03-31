@@ -69,7 +69,7 @@ function tableEventsTaskFromData(data) {
   const actionRestore = document.querySelector(`.task-list-container tr[data-id="${id}"] .list-action-restore`);
   const actionEdit = document.querySelector(`.task-list-container tr[data-id="${id}"] .list-action-edit`);
   actionRemove.addEventListener('click', event => confirmRemoveTask(id));
-  actionEdit.addEventListener('click', event => editTaskForm(id));
+  actionEdit.addEventListener('click', event => editTaskForm(data));
   if (actionFinish) actionFinish.addEventListener('click', event => finishTask(data));
   if (actionRestore) actionRestore.addEventListener('click', event => restoreTask(data));
 }

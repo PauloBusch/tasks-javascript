@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/form.css"/>
   <link rel="stylesheet" href="css/index.css"/>
   <link rel="stylesheet" href="css/task-list.css"/>
+  <link rel="stylesheet" href="css/task-form.css"/>
 </head>
 <body>
   <header>
@@ -148,15 +149,20 @@
                         <div class="hidden-fields">
                           <input type="hidden" name="id"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group type-group">
                           <label class="control-label" for="type">Tipo:</label>
                           <select class="form-control" name="type" id="type" type="text" required></select>
                           <div class="invalid-feedback">Informe o tipo</div>
                         </div>
                         <div class="form-group">
-                          <label class="control-label" for="time">Data/Hora Fim:</label>
-                          <input class="form-control" name="time" id="time" type="text" placeholder="Hora final" required/>
-                          <div class="invalid-feedback">Informe a hora final</div>
+                          <label class="control-label" for="time_start">Hora Início:</label>
+                          <input class="form-control" name="time_start" id="time_start" type="text" placeholder="Hora de início" required/>
+                          <div class="invalid-feedback">Informe a hora de início</div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label" for="time_end">Hora Fim:</label>
+                          <input class="form-control" name="time_end" id="time_end" type="text" placeholder="Hora fim" required/>
+                          <div class="invalid-feedback">Informe a hora fim</div>
                         </div>
                       </form>
                     </div>
@@ -209,6 +215,7 @@
   <script src="js/plugins/random.js"></script>
   <script src="js/pages/type-list.js"></script>
   <script src="js/pages/type-form.js"></script>
-  <script src="js/pages/tasks-list.js"></script>
+  <script src="js/pages/task-list.js"></script>
+  <script src="js/pages/task-form.js"></script>
 </body>
 </html>

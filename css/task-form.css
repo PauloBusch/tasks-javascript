@@ -1,0 +1,21 @@
+.inside-icon {
+  position: relative;
+}
+
+.inside-icon input {
+  padding-right: 25px;
+}
+
+.inside-icon i {
+  cursor: pointer;
+  transition: .2s;
+  font-size: 20px;
+  position: absolute;
+  right: 5px;
+  right: 15px;
+  top: 10px;
+}
+
+.inside-icon i:hover {
+  opacity: .8;
+}
