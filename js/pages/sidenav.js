@@ -4,11 +4,12 @@ function sidenavEvents() {
   const menus = document.querySelectorAll('#menu .nav-link');
   for (const menu of menus)
     menu.addEventListener('click', toggleMenu, false);
-
+    
+  document.querySelector('#menu .nav-link[href="#types"]').addEventListener('click', loadTypes);
+  document.querySelector('#menu .nav-link[href="#tasks"]').addEventListener('click', loadTasks);
+  
   const hash = location.hash || '#dashboard';
-  const menuActiveHash = document.querySelector(`a[href="${hash}"]`);
-  menuActiveHash.classList.add('active');
-  toggleContent(hash);
+  document.querySelector(`a[href="${hash}"]`).click();
 }
 
 function toggleMenu(event) {

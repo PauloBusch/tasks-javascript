@@ -1,5 +1,3 @@
-window.addEventListener('load', loadTypes, false);
-
 function loadTypes() {
   const request = new XMLHttpRequest();
   const token = localStorage.getItem('token');
